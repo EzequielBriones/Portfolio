@@ -18,6 +18,10 @@ header {
   align-items: center;
 }
 
+span {
+  display: inline-block;
+}
+
 .landing__box-1 {
   font-size: 4rem;
   letter-spacing: 0.1rem;
@@ -26,6 +30,7 @@ header {
 
 img {
   width: 25rem;
+  display: inline-block;
 }
 
 .about__box-1 {
@@ -219,164 +224,6 @@ img {
   border-bottom: 1px solid transparent;
 }
 
-/* 
-.contact {
-  color: grey;
-  margin-left: 6rem;
-  margin-top: 1.5rem;
-}
-
-.contact__form {
-  background-color: black;
-  width: 95%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-radius: 2px;
-}
-
-.contact__btn {
-  padding: 0.8rem 1.3rem;
-  background-color: white;
-  color: grey;
-  border: 2px solid black;
-  font-size: 0.95rem;
-  border-radius: 10px;
-  outline: none;
-  cursor: pointer;
-  transition: 0.3s;
-  margin: 0;
-}
-.contact__btn:hover {
-  background-color: black;
-  border: 1.5px solid grey;
-}
-
-.contact__info {
-  padding: 2.3rem 2.2rem;
-}
-
-.contact__info-cont {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  background-color: white;
-  padding: 3rem;
-}
-
-.contact__info-bullets i {
-  color: grey;
-  font-size: 1.5rem;
-  padding: 0.2rem 0.5rem 0.5rem 0;
-}
-
-.form {
-  padding: 2.3rem 2.2rem;
-  z-index: 10;
-  overflow: hidden;
-  position: relative;
-}
-
-.input {
-  position: relative;
-  margin: 1rem 0;
-  background-color: black;
-}
-
-.input__in {
-  width: 100%;
-  outline: none;
-  border: 2px solid black;
-  background: none;
-  padding: 0.6rem 1.2rem;
-  color: white;
-  font-weight: 500;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.input__label {
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  padding: 0 0.2rem;
-  color: grey;
-  font-size: 0.9rem;
-  font-weight: 400;
-  pointer-events: none;
-  z-index: 1000;
-  transition: 0.5s;
-}
-.input__label-textarea {
-  top: 1rem;
-  transform: translateY(0);
-}
-
-.input__span {
-  position: absolute;
-  top: 0;
-  left: 1.5625rem;
-  transform: translateY(-50%);
-  font-size: 0.8rem;
-  padding: 0 0.4rem;
-  color: transparent;
-  pointer-events: none;
-  z-index: 500;
-}
-.input__span::before,
-.input__span::after {
-  content: "";
-  position: absolute;
-  width: 10%;
-  opacity: 0;
-  transition: 0.3s;
-  height: 5px;
-  background-color: black;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.input__span::before {
-  left: 50%;
-}
-
-.input__span::after {
-  right: 50%;
-}
-
-.input.focus .input__label {
-  top: 0;
-  transform: translateY(-50%);
-  left: 1.5625rem;
-  font-style: 0.8rem;
-}
-
-.input.focus .input__span::before,
-.input.focus .input__span::after {
-  width: 50%;
-  opacity: 1;
-}
-
-.textarea {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  padding: 0.8rem 1.2rem;
-  min-height: 9.4rem;
-  resize: none;
-  overflow-y: auto;
-}
-
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 100px black inset;
-  -moz-box-shadow: 0 0 0 100px black inset;
-  box-shadow: 0 0 0 100px black inset;
-  -webkit-text-fill-color: white;
-  transition: 0.0001s;
-  caret-color: white;
-} */
-
 .SM {
   position: fixed;
   width: 2.5rem;
@@ -438,4 +285,24 @@ input:-webkit-autofill {
 
 .contact__box-2 i {
   padding: 0rem 0.5rem;
+}
+
+.animate__animated.animate__fadeInUp {
+  animation-delay: 1s;
+}
+
+.animate__animated.animate__fadeInLeft {
+  animation-delay: 4s;
+}
+
+.animate__animated.animate__fadeInDown {
+  animation-delay: 2s;
+}
+
+.animate__animated.animate__fadeInRight {
+  animation-delay: 3s;
+}
+
+.animate__animated.animate__fadeIn {
+  animation-delay: 3.5s;
 }
