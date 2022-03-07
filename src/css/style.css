@@ -435,3 +435,7 @@ input:-webkit-autofill {
   flex-direction: column;
   gap: 1rem;
 }
+
+.contact__box-2 i {
+  padding: 0rem 0.5rem;
+}
