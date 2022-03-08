@@ -14,6 +14,7 @@ section,
 header {
   display: flex;
   margin: 10rem 10rem;
+  max-width: 64rem;
   gap: 8rem;
   align-items: center;
 }
@@ -288,21 +289,21 @@ img {
 }
 
 .animate__animated.animate__fadeInUp {
-  animation-delay: 1s;
+  animation-delay: 0.5s;
 }
 
 .animate__animated.animate__fadeInLeft {
-  animation-delay: 4s;
+  animation-delay: 3.5s;
 }
 
 .animate__animated.animate__fadeInDown {
-  animation-delay: 2s;
+  animation-delay: 1.5s;
 }
 
 .animate__animated.animate__fadeInRight {
-  animation-delay: 3s;
+  animation-delay: 2.5s;
 }
 
 .animate__animated.animate__fadeIn {
-  animation-delay: 3.5s;
+  animation-delay: 3s;
 }
