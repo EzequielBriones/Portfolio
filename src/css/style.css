@@ -4,6 +4,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.5s;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+@media only screen and (max-width: 1187px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  html {
+    font-size: 60%;
+  }
 }
 
 body {
@@ -11,27 +29,51 @@ body {
 }
 
 section,
-header {
+main {
   display: flex;
-  margin: 10rem 10rem;
-  max-width: 64rem;
+  margin: 0 auto;
+  max-width: 85%;
   gap: 8rem;
   align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 950px) {
+  section,
+  main {
+    height: unset;
+    margin: 5rem auto;
+  }
 }
 
 span {
   display: inline-block;
 }
 
+.landing__section,
+.about__section,
+.projects__section,
+.contact__section {
+  display: flex;
+  justify-content: center;
+}
+
 .landing__box-1 {
   font-size: 4rem;
   letter-spacing: 0.1rem;
   line-height: 1.1;
+  max-width: 30rem;
+}
+
+@media only screen and (max-width: 950px) {
+  .landing__box-2 {
+    display: none;
+  }
 }
 
 img {
   width: 25rem;
-  display: inline-block;
 }
 
 .about__box-1 {
@@ -40,6 +82,20 @@ img {
 
 .about__box-2 {
   text-align: justify;
+  max-width: 30rem;
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 950px) {
+  .about__box-2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .about__box-2 {
+    font-size: 1.5rem;
+  }
 }
 
 .about__box-2 h2 {
@@ -50,6 +106,8 @@ img {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+  min-width: 35rem;
+  flex-wrap: wrap;
 }
 
 .about__box-2 li {
@@ -95,9 +153,9 @@ img {
   position: relative;
   border-radius: 50%;
   margin: 0.625rem;
-  width: 3.125rem;
-  height: 3.125rem;
-  font-size: 1.125rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,14 +212,20 @@ img {
 .projects__section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 3rem;
   position: relative;
+  gap: 3rem;
 }
 
 .projects__box-2 {
   display: flex;
   gap: 2.2rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .projects__box-2 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .projects__box {
@@ -195,11 +259,8 @@ img {
   text-decoration: none;
   border-bottom: 1px solid black;
   padding: 1rem 3rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: all 0.2s;
-  position: absolute;
-  right: -0.75rem;
-  bottom: -6.25rem;
 }
 
 .btn-rectangular--white:hover,
@@ -269,6 +330,9 @@ img {
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  font-size: 1.5rem;
+  height: auto;
+  padding-bottom: 10rem;
 }
 
 .contact__container {
@@ -276,12 +340,19 @@ img {
   flex-direction: row;
   gap: 8rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .contact__box-2 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .contact__container {
+    justify-content: center;
+  }
 }
 
 .contact__box-2 i {
