@@ -11,6 +11,21 @@ html {
   scroll-behavior: smooth;
 }
 
+p {
+  color: var(--color-lightblack-2);
+}
+
+:root {
+  --color-black: #000;
+  --color-lightblack: rgba(0, 0, 0, 0.2);
+  --color-lightblack-2: rgba(0, 0, 0, 0.85);
+  --color-white: #fff;
+  --color-lightgrey: #dcdcdc;
+  --color-lightgrey-2: rgb(242, 242, 242);
+  --color-darkgrey: rgba(197, 197, 197, 0.8);
+  --color-darkgrey-2: #191919;
+}
+
 @media only screen and (max-width: 1187px) {
   html {
     font-size: 80%;
@@ -25,6 +40,7 @@ html {
 
 body {
   font-family: "lato", sans-serif;
+  position: relative;
 }
 
 section,
@@ -36,6 +52,31 @@ main {
   align-items: center;
   flex-wrap: wrap;
   height: 100vh;
+}
+
+nav {
+  position: absolute;
+  right: 0;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  padding: 0.5rem;
+  border: 1.5px solid var(--color-black);
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: var(--color-black);
+  border-radius: 1px;
+}
+
+nav a:hover {
+  border: 1.5px solid var(--color-darkgrey);
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 @media only screen and (max-width: 950px) {
@@ -131,7 +172,7 @@ img {
 .landing__img-border {
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  border: 1px solid var(--color-black);
   position: absolute;
   top: 25px;
   left: 25px;
@@ -159,7 +200,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 10px var(--color-lightblack);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -168,11 +209,11 @@ img {
   position: absolute;
   top: 0;
   font-size: 0.875rem;
-  background-color: black;
-  color: black;
+  background-color: var(--color-black);
+  color: var(--color-black);
   padding: 0.3125rem 0.5rem;
   border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 10px var(--color-lightblack);
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -183,7 +224,7 @@ img {
   content: "";
   height: 0.5rem;
   width: 0.5rem;
-  background-color: black;
+  background-color: var(--color-black);
   bottom: 1.4375rem;
   left: 50%;
   transform: translate(-50%) rotate(45deg);
@@ -199,13 +240,13 @@ img {
 
 .wrapper .icon:hover img,
 .wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px -1px 0px var(--color-lightblack);
 }
 
 .wrapper .icon:hover,
 .wrapper .icon:hover .tooltip,
 .wrapper .icon:hover .tooltip::before {
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .projects__section {
@@ -229,16 +270,16 @@ img {
 
 .projects__box {
   width: 20.3rem;
-  border: black solid 2px;
+  border: var(--color-black) solid 2px;
   padding: 1rem 1rem 2rem;
   cursor: pointer;
   transition: 0.2s all ease;
 }
 
 .projects__box:hover {
-  border: 2px solid rgba(197, 197, 197, 0.8);
-  background-color: black;
-  color: white;
+  border: 2px solid --color-darkgrey;
+  background-color: var(--color-black);
+  color: var(--color-white);
   font-weight: lighter;
 }
 
@@ -254,9 +295,9 @@ img {
 
 .btn-rectangular:link,
 .btn-rectangular:visited {
-  color: black;
+  color: var(--color-black);
   text-decoration: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-black);
   padding: 1rem 3rem;
   font-size: 1.1rem;
   transition: all 0.2s;
@@ -264,21 +305,21 @@ img {
 
 .btn-rectangular--white:hover,
 .btn-rectangular:hover {
-  background-color: black;
-  color: white;
-  box-shadow: 0 1rem 2rem rgba(black, 0.5);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  box-shadow: 0 1rem 2rem rgba(var(--color-black), 0.5);
   border: 1px solid grey;
 }
 
 .btn-rectangular--white:active,
 .btn-rectangular:active {
-  box-shadow: 0 0.5rem 2rem rgba(black, 0.5);
+  box-shadow: 0 0.5rem 2rem rgba(var(--color-black), 0.5);
 }
 
 .btn-rectangular--white:link,
 .btn-rectangular--white:visited {
-  color: white;
-  border-bottom: 1px solid white;
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-white);
 }
 
 .btn-rectangular--white:hover {
@@ -307,7 +348,7 @@ img {
   content: "";
   display: block;
   padding-bottom: 12rem;
-  background-color: black;
+  background-color: var(--color-black);
   width: 1px;
 }
 
@@ -317,12 +358,12 @@ img {
 }
 .SM ul li a {
   font-size: 1.5rem;
-  color: black;
+  color: var(--color-black);
   transition: 0.2s all ease-in-out;
   padding: 1rem;
 }
 .SM ul li a:hover {
-  color: black;
+  color: var(--color-black);
 }
 
 .contact__section {
