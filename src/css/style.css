@@ -79,14 +79,6 @@ nav a:hover {
   color: var(--color-white);
 }
 
-@media only screen and (max-width: 950px) {
-  section,
-  main {
-    height: unset;
-    margin: 5rem auto;
-  }
-}
-
 span {
   display: inline-block;
 }
@@ -326,13 +318,19 @@ img {
   border-bottom: 1px solid transparent;
 }
 
-.SM {
+aside {
   position: fixed;
   width: 2.5rem;
   bottom: 0;
   left: 1rem;
   right: auto;
 }
+/* 
+@media only screen and (max-width: 950px) {
+  aside {
+    bottom: 15rem;
+  }
+} */
 
 .SM ul {
   list-style: none;
