@@ -554,8 +554,11 @@ aside {
 
   .work__container > .work__photo {
     filter: none;
-    transform: scale(1.05);
-    width: 100%;
+    transform: scale(1);
+  }
+
+  .work__container:hover > .work__photo {
+    width: 100%;    
   }
   
   .work__container > .work__num {
@@ -586,7 +589,6 @@ aside {
     margin-top: 1.2rem; 
   }
 }
-
 
 .work__desc ul {
   display: flex;
@@ -627,9 +629,7 @@ aside {
   animation: 2s cubic-bezier(0.25, 1, 0.3, 1) circle-out-center both;
 }
 
-.modal-overlay-1,
-.modal-overlay-2,
-.modal-overlay-3 {
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -650,17 +650,13 @@ aside {
   z-index: 10;
 }
 .modal-container {
-  background: var(--clr-white);
-  border-radius: var(--radius);
   width: 90vw;
   text-align: center;
   /* display: grid;
   place-items: center; */
   position: relative;
 }
-.close-btn,
-.close-btn-2,
-.close-btn-3 {
+.close-btn {
   position: absolute;
   top: -1rem;
   right: -1rem;
@@ -671,6 +667,13 @@ aside {
   cursor: pointer;
   transition: var(--transition);
 }
+
+@media only screen and (max-width: 768px) {
+  .close-btn {
+    top: 0;
+  }
+}
+
 .close-btn:hover {
   color: var(--clr-red-light);
   transform: scale(1.3);
