@@ -464,8 +464,6 @@ aside {
   transition: all 0.5s;
 }
 
-
-
 .work__container:hover {
   border: 2px solid var(--color-black);
   padding: 1.3rem;
@@ -497,6 +495,10 @@ aside {
 
 .work__container:hover > .work__photo--3 {
   background-position: center center;
+}
+
+.work__num--1 {
+  color: black !important;
 }
 
 .work__photo {
@@ -587,6 +589,10 @@ aside {
     margin: 0 auto;
     width: 85%;
     margin-top: 1.2rem; 
+  }
+
+  .work__num {
+    top: -1rem;
   }
 }
 
