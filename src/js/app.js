@@ -2,16 +2,6 @@ const box1 = document.querySelector(".project-1");
 const box2 = document.querySelector(".project-2");
 const box3 = document.querySelector(".project-3");
 
-// box1.addEventListener("click", () => {
-
-// });
-// box2.addEventListener("click", () => {
-//   console.log("Se presionó la box2");
-// });
-// box3.addEventListener("click", () => {
-//   console.log("Se presionó la box3");
-// });
-
 // const modBtn = document.querySelector(".modal-btn");
 const modOver1 = document.querySelector(".modal-overlay-1");
 const modOver2 = document.querySelector(".modal-overlay-2");
@@ -80,3 +70,23 @@ let close3 = () => {
   modOver3.classList.remove("open-modal");
   body.style.overflowY = "visible";
 };
+
+//////////////////////////////////////////////////7
+
+const text = document.getElementById("contact__text");
+
+let changeOnSize = (size) => {
+  if (size.matches) {
+    text.innerHTML = `Wanna chat?<br />
+    <br />
+    You can find me here! &dArr;`;
+  } else {
+    text.innerHTML = `Wanna chat?<br />
+    <br />
+    You can find me here! &rArr;`;
+  }
+};
+
+let size = window.matchMedia("(max-width: 692px)");
+changeOnSize(size); // Call listener function at run time
+size.addListener(changeOnSize); // Attach listener function on state changes
