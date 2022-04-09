@@ -542,20 +542,20 @@ aside {
   color: var(--color-white);
   background-color: var(--color-lightblack);
   padding: 2rem 1.5rem;
+  border: 1px solid var(--color-black);
 }
 
 
 @media only screen and (max-width: 768px) {
   .work__container {
     border: 2px solid var(--color-black);
-    padding: 1.3rem;
+    padding: 1rem;
   }
 
   .work__container > .work__photo {
     filter: none;
     transform: scale(1.05);
     width: 100%;
-    transition: all 0.5s;
   }
   
   .work__container > .work__num {
@@ -582,8 +582,8 @@ aside {
   .work__desc {
     position: unset;
     margin: 0 auto;
-    width: 80%;
-    margin-top: 1rem; 
+    width: 85%;
+    margin-top: 1.2rem; 
   }
 }
 
