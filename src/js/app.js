@@ -90,3 +90,24 @@ let changeOnSize = (size) => {
 let size = window.matchMedia("(max-width: 692px)");
 changeOnSize(size); // Call listener function at run time
 size.addListener(changeOnSize); // Attach listener function on state changes
+
+///////////////////////////////////////////////////////////////////////////
+
+let toggle = document.querySelector(".toggle");
+let menu = document.querySelector(".menu");
+
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+
+let appearOnTamaño = (tamaño) => {
+  if (tamaño.matches) {
+    menu.style.display = "flex";
+  } else {
+    menu.style.display = "none";
+  }
+};
+
+let tamaño = window.matchMedia("(max-width: 768px)");
+appearOnTamaño(tamaño); // Call listener function at run time
+tamaño.addListener(appearOnTamaño); // Attach listener function on state changes
