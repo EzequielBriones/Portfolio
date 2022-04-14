@@ -1,3 +1,5 @@
+/****************************************** General Styles **********************************/
+
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 
 * {
@@ -11,10 +13,6 @@ html {
   scroll-behavior: smooth;
 }
 
-p {
-  color: var(--color-lightblack-2);
-}
-
 :root {
   --color-black: #000;
   --color-lightblack: rgba(0, 0, 0, 0.2);
@@ -24,6 +22,10 @@ p {
   --color-lightgrey-2: rgb(242, 242, 242);
   --color-darkgrey: rgba(197, 197, 197, 0.8);
   --color-darkgrey-2: #191919;
+}
+
+p {
+  color: var(--color-lightblack-2);
 }
 
 @media only screen and (max-width: 1187px) {
@@ -37,13 +39,6 @@ p {
     font-size: 70%;
   }
 }
-
-/* 
-@media only screen and (max-width: 520px) {
-  html {
-    font-size: 60%;
-  }
-} */
 
 body {
   font-family: "lato", sans-serif;
@@ -96,6 +91,24 @@ span {
   display: inline-block;
 }
 
+img {
+  width: 25rem;
+}
+
+aside {
+  position: fixed;
+  width: 2.5rem;
+  bottom: 0;
+  left: 1rem;
+  right: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  aside {
+    display: none;
+  }
+}
+
 .landing__section,
 .about__section,
 .projects__section,
@@ -103,6 +116,42 @@ span {
   display: flex;
   justify-content: center;
 }
+
+/****************************************** Social Media **********************************/
+
+.SM ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  box-align: center;
+  align-items: center;
+  margin: 0;
+  gap: 2rem;
+  padding: 0;
+}
+.SM ul::after {
+  content: "";
+  display: block;
+  padding-bottom: 12rem;
+  background-color: var(--color-black);
+  width: 1px;
+}
+
+.SM ul li:hover {
+  transform: translateY(-0.3rem);
+  transition: 0.2s all ease-in-out;
+}
+.SM ul li a {
+  font-size: 1.5rem;
+  color: var(--color-black);
+  transition: 0.2s all ease-in-out;
+  padding: 1rem;
+}
+.SM ul li a:hover {
+  color: var(--color-black);
+}
+
+/****************************************** Landing Section **********************************/
 
 .landing__box-1 {
   font-size: 4rem;
@@ -117,12 +166,44 @@ span {
   }
 }
 
-img {
-  width: 25rem;
-}
+/****************************************** About Section **********************************/
 
 .about__box-1 {
   position: relative;
+}
+
+
+.about__img {
+  filter: grayscale(100%);
+  transition: 0.2s all;
+  position: relative;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .about__img {
+    filter: grayscale(0);
+  }
+} 
+
+.about__img:hover {
+  filter: grayscale(0);
+}
+
+.about__img-border {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--color-black);
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 0;
+  transition: 0.2s all;
+}
+
+.about__img:hover ~ .about__img-border {
+  top: 10px;
+  left: 10px;
 }
 
 .about__box-2 {
@@ -142,8 +223,6 @@ img {
     font-size: 1.5rem;
   }
 } 
-
-
 
 .about__box-2 h2 {
   margin-bottom: 1rem;
@@ -168,39 +247,6 @@ img {
 
 .about__box-2 img {
   width: 3rem;
-}
-
-.landing__img {
-  filter: grayscale(100%);
-  transition: 0.2s all;
-  position: relative;
-  z-index: 1;
-}
-
-@media only screen and (max-width: 768px) {
-  .landing__img {
-    filter: grayscale(0);
-  }
-} 
-
-.landing__img:hover {
-  filter: grayscale(0);
-}
-
-.landing__img-border {
-  width: 100%;
-  height: 100%;
-  border: 1px solid var(--color-black);
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  z-index: 0;
-  transition: 0.2s all;
-}
-
-.landing__img:hover ~ .landing__img-border {
-  top: 10px;
-  left: 10px;
 }
 
 .wrapper {
@@ -267,13 +313,13 @@ img {
   color: var(--color-white);
 }
 
+/****************************************** Projects Section **********************************/
+
 .projects__section {
   display: flex;
   flex-direction: column;
   position: relative;
   gap: 3rem;
-
-
 }
 
 .projects__box-2 {
@@ -350,112 +396,59 @@ img {
   border-bottom: 1px solid transparent;
 }
 
-aside {
+/***** Modal *****/
+
+.modal-overlay {
   position: fixed;
-  width: 2.5rem;
-  bottom: 0;
-  left: 1rem;
-  right: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-lightblack-2);
+  display: none;
+  place-items: center;
+  transition: var(--transition);
+  visibility: hidden;
+  z-index: -10;
+  margin: 0 auto;
+  animation: circle-out-center 2s;
+}
+
+/* OPEN/CLOSE MODAL */
+.open-modal {
+  visibility: visible;
+  z-index: 10;
+}
+
+.modal-container {
+  width: 90vw;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: 0.1s;
 }
 
 @media only screen and (max-width: 768px) {
-  aside {
-    display: none;
+  .close-btn {
+    top: 0;
   }
 }
 
-.SM ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  box-align: center;
-  align-items: center;
-  margin: 0;
-  gap: 2rem;
-  padding: 0;
-}
-.SM ul::after {
-  content: "";
-  display: block;
-  padding-bottom: 12rem;
-  background-color: var(--color-black);
-  width: 1px;
+.close-btn:hover {
+  color: var(--clr-red-light);
+  transform: scale(1.3);
 }
 
-.SM ul li:hover {
-  transform: translateY(-0.3rem);
-  transition: 0.2s all ease-in-out;
-}
-.SM ul li a {
-  font-size: 1.5rem;
-  color: var(--color-black);
-  transition: 0.2s all ease-in-out;
-  padding: 1rem;
-}
-.SM ul li a:hover {
-  color: var(--color-black);
-}
-
-.contact__section {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-  font-size: 1.5rem;
-  height: auto;
-  padding-bottom: 10rem;
-}
-
-@media only screen and (max-width: 684px) {
-  .contact__section {
-    margin-top: 4rem;
-    padding-bottom: 1rem;
-    gap: 3.5rem;
-  }
-}
-
-.contact__container {
-  display: flex;
-  flex-direction: row;
-  gap: 8rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.contact__box-2 {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-@media only screen and (max-width: 700px) {
-  .contact__container {
-    justify-content: center;
-  }
-}
-
-.contact__box-2 i {
-  padding: 0rem 0.5rem;
-}
-
-.animate__animated.animate__fadeInUp {
-  animation-delay: 0.5s;
-}
-
-.animate__animated.animate__fadeInLeft {
-  animation-delay: 3.5s;
-}
-
-.animate__animated.animate__fadeInDown {
-  animation-delay: 1.5s;
-}
-
-.animate__animated.animate__fadeInRight {
-  animation-delay: 2.5s;
-}
-
-.animate__animated.animate__fadeIn {
-  animation-delay: 3s;
-}
 
 .work {
   color: var(--color-darkgrey);
@@ -474,7 +467,6 @@ aside {
   border: 2px solid var(--color-black);
   padding: 1.3rem;
 }
-
 
 .work__container:hover > .work__photo {
   filter: none;
@@ -502,8 +494,6 @@ aside {
 .work__container:hover > .work__photo--3 {
   background-position: center center;
 }
-
-
 
 .work__photo {
   filter: saturate(0%) brightness(100%) contrast(100%);
@@ -550,7 +540,6 @@ aside {
   padding: 2rem 1.5rem;
   border: 1px solid var(--color-black);
 }
-
 
 @media only screen and (max-width: 768px) {
   .work__container {
@@ -630,6 +619,72 @@ aside {
   color: var(--color-lightgrey);
 }
 
+/****************************************** Contact Section **********************************/
+
+.contact__section {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  font-size: 1.5rem;
+  height: auto;
+  padding-bottom: 10rem;
+}
+
+@media only screen and (max-width: 684px) {
+  .contact__section {
+    margin-top: 4rem;
+    padding-bottom: 1rem;
+    gap: 3.5rem;
+  }
+}
+
+.contact__container {
+  display: flex;
+  flex-direction: row;
+  gap: 8rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact__box-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .contact__container {
+    justify-content: center;
+  }
+}
+
+.contact__box-2 i {
+  padding: 0rem 0.5rem;
+}
+
+/****************************************** Animations **********************************/
+
+
+.animate__animated.animate__fadeInUp {
+  animation-delay: 0.5s;
+}
+
+.animate__animated.animate__fadeInDown {
+  animation-delay: 1.5s;
+}
+
+.animate__animated.animate__fadeInRight {
+  animation-delay: 2.5s;
+}
+
+.animate__animated.animate__fadeIn {
+  animation-delay: 3s;
+}
+
+.animate__animated.animate__fadeInLeft {
+  animation-delay: 3.5s;
+}
+
 @keyframes circle-out-center {
   from {
     clip-path: circle(0%);
@@ -643,55 +698,7 @@ aside {
   animation: 2s cubic-bezier(0.25, 1, 0.3, 1) circle-out-center both;
 }
 
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--color-lightblack-2);
-  display: none;
-  place-items: center;
-  transition: var(--transition);
-  visibility: hidden;
-  z-index: -10;
-  margin: 0 auto;
-  animation: circle-out-center 2s;
-}
-/* OPEN/CLOSE MODAL */
-.open-modal {
-  visibility: visible;
-  z-index: 10;
-}
-.modal-container {
-  width: 90vw;
-  text-align: center;
-  /* display: grid;
-  place-items: center; */
-  position: relative;
-}
-.close-btn {
-  position: absolute;
-  top: -1rem;
-  right: -1rem;
-  font-size: 2rem;
-  background: transparent;
-  border-color: transparent;
-  color: var(--color-white);
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-@media only screen and (max-width: 768px) {
-  .close-btn {
-    top: 0;
-  }
-}
-
-.close-btn:hover {
-  color: var(--clr-red-light);
-  transform: scale(1.3);
-}
+/****************************************** Circular Menu **********************************/
 
 .menu {
   position: fixed;
