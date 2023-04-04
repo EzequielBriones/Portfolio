@@ -133,3 +133,11 @@ let appearOnTamaño = (tamaño) => {
 let tamaño = window.matchMedia("(max-width: 768px)");
 appearOnTamaño(tamaño); // Call listener function at run time
 tamaño.addListener(appearOnTamaño); // Attach listener function on state changes
+
+///////////////////////////////////////////////////////////////////////////
+
+const scrollBtn = document.querySelector(".scroll-btn");
+
+scrollBtn.addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});

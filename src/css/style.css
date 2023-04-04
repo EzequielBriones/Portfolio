@@ -732,7 +732,7 @@ aside {
 }
 
 .menu.active li {
-  transform: rotate(calc(140deg / 4 * var(--i)));
+  transform: rotate(calc(140deg / 5 * var(--i)));
 }
 
 .menu li a {
@@ -743,7 +743,7 @@ aside {
   height: 2.5rem;
   background: #fff;
   border-radius: 50%;
-  transform: rotate(calc(140deg / -4 * var(--i)));
+  transform: rotate(calc(140deg / -5 * var(--i)));
   color: black;
   box-shadow: 0 3px 4px rgba(0,0,0,0.25);
 }
@@ -766,4 +766,23 @@ aside {
 
 .menu.active .toggle {
   transform: rotate(315deg);
+}
+
+.scroll-btn {
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  bottom: 1.25rem;
+  right: 4rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.scroll-btn:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
 }
